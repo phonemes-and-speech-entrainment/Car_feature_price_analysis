@@ -1,4 +1,4 @@
-### Car Price Analysis
+# Car Price Analysis
 
 Car Price Prediction is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
@@ -59,14 +59,14 @@ TBD:
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials; however, it is important to be very specific about these sources to avoid plagiarism.
 * You can break the credits section into Content and Media, depending on what you include in your project.
 
-# Content
+### Content
 
 Examples:
 * The text for the Home page was taken from the Wikipedia Article A
 * Instructions on how to implement form validation were taken from a Specific YouTube Tutorial
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
-# Media 
+### Media 
 
 * The photos used on the home and sign-up page are from This Open-Source site
 * The images used for the gallery page were taken from this other open-source site
