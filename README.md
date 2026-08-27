@@ -1,197 +1,143 @@
 # Car Price Analysis
 
-This project explores relationships between car prices and market, vehicle and engineering characteristics. It uses exploratory data analysis (EDA), data cleaning, feature extraction, grouped descriptive statistics, correlation analysis and visualisation to identify characteristics that may be useful for understanding and eventually predicting car prices.
+This project explores relationships between car prices and market, vehicle and engineering characteristics using exploratory data analysis (EDA), data cleaning, feature engineering, descriptive statistics, correlation analysis and visualisation.
 
-The project considers both an **engineering perspective**, examining vehicle and engine characteristics, and a **market-pricing perspective**, investigating how manufacturer, engine size and vehicle size relate to price.
+The analysis considers both an **engineering perspective**, examining vehicle and engine characteristics, and a **market-pricing perspective**, investigating how manufacturer, engine size and vehicle size relate to price.
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 ## Dataset Content
 
-The dataset used is the **Car Price Prediction** dataset from Kaggle:
+The project uses the **Car Price Prediction** dataset from Kaggle:
 
 [Car Price Prediction dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction/data)
 
-It contains **205 observations and 26 original columns**, with each row representing a car. Variables include:
+The dataset contains **205 observations and 26 original columns**, with each row representing a car. Variables cover:
 
-* Car identifier and name
+* Car identity and manufacturer
 * Insurance risk
-* Fuel and aspiration type
-* Body and drivetrain configuration
+* Fuel, aspiration, body and drivetrain
 * Vehicle dimensions and weight
-* Engine design and size
-* Internal engine measurements
-* Engine performance
+* Engine characteristics and performance
 * Fuel efficiency
-* Car price
+* Price
 
-The target variable for potential predictive modelling is `price`.
+The target variable for future modelling is `price`.
 
-Three additional features were created:
+Three features were engineered:
 
-* `manufacturer`, extracted from `CarName`
-* `cylinder_count`, converting categorical cylinder descriptions into numerical values
-* `footprint`, calculated by multiplying car length by car width as a simple measure of vehicle size
+* `manufacturer` — extracted from `CarName`
+* `cylinder_count` — numerical cylinder count
+* `footprint` — `carlength × carwidth`
 
-Several inconsistent spellings in `CarName` were corrected. No missing values or duplicate rows were identified.
+Inconsistent `CarName` spellings were corrected. No missing values or duplicate rows were found.
 
 ## Business Requirements
 
-The project takes the perspective of a hypothetical automotive pricing client, such as a dealership, manufacturer, pricing analyst or market research partner.
+The project adopts the perspective of a hypothetical dealership, manufacturer, pricing analyst or market research client.
 
 The primary requirement is to:
 
-> **Understand which market, engineering and physical vehicle characteristics are most strongly associated with car price and identify promising features for future car price prediction models.**
+> **Understand which market, engineering and physical vehicle characteristics are most strongly associated with car price and identify promising features for future prediction models.**
 
-The analysis investigates:
+Key questions include:
 
-* Which manufacturers have the highest average prices?
-* Do higher-priced manufacturers tend to have different engineering characteristics?
-* Are larger and heavier vehicles associated with higher prices?
-* Which numerical features are strongly correlated and potentially redundant?
-* Which variables should be investigated as candidate predictors in a future regression or machine-learning model?
+* Which manufacturers have the highest prices?
+* Do manufacturers differ in engineering characteristics?
+* Are larger and heavier cars more expensive?
+* Which numerical features are strongly correlated?
+* Which variables are promising candidate predictors?
 
-For a pricing client, these findings can support comparisons between vehicles and identify characteristics associated with different price segments. For engineering or product-development audiences, they illustrate relationships between physical size, engine characteristics and performance.
+The findings can support vehicle comparisons, price segmentation and future predictive modelling.
 
 ## Hypothesis and How to Validate
 
 The main hypothesis is:
 
-> **Some vehicle characteristics provide more useful information about car price than others, with market characteristics such as manufacturer and broad engineering characteristics such as engine size and vehicle size potentially being stronger candidate predictors than highly specific or redundant features.**
+> **Some vehicle characteristics are more useful for understanding car price than others, with manufacturer, engine size and vehicle size potentially being stronger predictors than highly specific or redundant features.**
 
-This was investigated as an exploratory hypothesis rather than an established conclusion.
+This was investigated through:
 
-Validation involved:
+* Dataset and data-quality checks
+* Cleaning inconsistent car names
+* Feature extraction and engineering
+* Manufacturer-level descriptive statistics
+* Engineering comparisons between manufacturers
+* Pearson correlation analysis
+* Bar charts, scatter plots and heatmaps
+* Identification of correlated features and potential multicollinearity
 
-* Inspecting dataset structure and data types
-* Checking missing and duplicated values
-* Correcting inconsistent car-name spellings
-* Extracting manufacturer
-* Converting cylinder number to a numerical feature
-* Comparing manufacturer-level price statistics
-* Comparing manufacturer engineering characteristics
-* Calculating numerical correlations
-* Using bar charts, scatter plots and heatmaps
-* Identifying highly correlated feature groups and potential multicollinearity
+The analysis found strong positive associations between price and manufacturer, engine size and several vehicle-size variables. These are **exploratory associations**, not evidence of causation or independent predictive effects.
 
-The analysis found strong positive associations between price and manufacturer, engine size and several vehicle-size variables. These are **exploratory associations within this dataset**, not evidence of independent causal effects.
-
-Further validation would require train/test evaluation, multiple linear regression diagnostics and formal multicollinearity assessment.
+Further validation would require predictive modelling, train/test evaluation and regression diagnostics.
 
 ## Project Plan
 
-The project followed this process:
-
 1. **Understand the dataset**
 
-   * Inspect structure, shape, columns and data types.
-   * Establish the broad meaning and category of each variable.
+   * Inspect structure, variables and data types.
 
 2. **Check data quality**
 
-   * Check missing values and duplicates.
-   * Inspect unique values for inconsistent labels and spelling errors.
+   * Check missing values, duplicates and inconsistent categories.
 
 3. **Clean and prepare the data**
 
-   * Correct obvious `CarName` inconsistencies.
-   * Retain original variables while creating additional features where useful.
+   * Correct `CarName` spelling inconsistencies.
 
 4. **Engineer and extract features**
 
-   * Extract `manufacturer` from `CarName`.
-   * Create numerical `cylinder_count`.
-   * Create `footprint` from car length and width.
+   * Create `manufacturer`, `cylinder_count` and `footprint`.
 
 5. **Conduct exploratory data analysis**
 
-   * Compare manufacturer price distributions and statistics.
-   * Investigate engine size and performance differences between manufacturers.
-   * Examine vehicle size, weight and price relationships.
-   * Explore numerical feature correlations.
+   * Compare manufacturer prices and engineering characteristics.
+   * Examine size, weight, engine and price relationships.
+   * Explore numerical correlations.
 
 6. **Interpret the results**
 
-   * Identify promising candidate predictors.
-   * Consider multicollinearity and redundant information.
-   * Identify areas requiring further automotive domain knowledge.
+   * Identify candidate predictors and potential redundancy.
 
 7. **Plan future modelling**
 
-   * Use exploratory findings to inform feature selection and future multiple linear regression or alternative predictive models.
+   * Use findings to inform multiple linear regression or alternative models.
 
-All analysis was performed using a single Pandas DataFrame. Cleaning and feature engineering were completed before the main exploratory analyses so that grouping and visualisation used consistent categories.
-
-Exploratory and descriptive methods were chosen to understand the dataset before making predictive modelling assumptions.
+The analysis was performed in a single Pandas DataFrame, with cleaning and feature engineering completed before the main exploratory analysis.
 
 ## The Rationale to Map the Business Requirements to the Data Visualisations
 
-The visualisations were selected to address specific business and analytical questions:
+* **Average price by manufacturer:** examines manufacturer price positioning.
+* **Average engine size versus price:** investigates engineering differences associated with market price.
+* **Vehicle size, weight and price heatmap:** identifies price associations and overlapping size information.
+* **Footprint versus price scatter plot:** tests the engineered size measure.
+* **Numerical correlation heatmap:** identifies highly correlated potential predictors.
 
-* **Average price by manufacturer:** identifies broad differences in manufacturer price positioning.
-* **Manufacturer average engine size versus average price:** investigates whether market-price differences may be associated with engineering characteristics.
-* **Vehicle size, weight and price correlation heatmap:** identifies characteristics associated with price and potentially overlapping information.
-* **Vehicle footprint versus price scatter plot:** examines whether the engineered footprint measure is associated with price.
-* **Numerical feature correlation heatmap:** identifies highly correlated feature groups that may require selection, combination or further investigation.
-
-Together, these visualisations help a hypothetical client understand relationships between engineering characteristics and market positioning while informing future feature selection.
+Together, these visualisations connect the business questions with exploratory evidence and future feature selection.
 
 ## Analysis Techniques Used
 
 ### Data inspection
 
-Pandas methods including:
-
-* `df.info()`
-* `df.shape`
-* `df.columns`
-* `df.dtypes`
-* `isnull().sum()`
-* `duplicated().sum()`
-* `nunique()`
-* `unique()`
-
-were used to understand dataset structure and quality.
+Pandas methods including `info()`, `shape`, `columns`, `dtypes`, `isnull()`, `duplicated()`, `nunique()` and `unique()` were used to understand the dataset.
 
 ### Data cleaning
 
-String replacement was used to correct obvious spelling inconsistencies in car names before extracting manufacturers and performing grouped analysis.
-
-The process relied partly on manual inspection of unique values. A larger real-world dataset would benefit from systematic validation and standardised reference categories.
+String replacement corrected obvious spelling inconsistencies in `CarName`. Manual inspection was used, which may not scale well to larger datasets.
 
 ### Feature engineering
 
-The following features were created:
-
-* `manufacturer` — extracted from `CarName`
-* `cylinder_count` — converts cylinder descriptions into numerical counts
-* `footprint` — combines `carlength` and `carwidth`
-
-These were selected because they provide clearer analytical interpretations for market and engineering comparisons.
+* `manufacturer` was extracted from `CarName`.
+* `cylinder_count` converted cylinder descriptions into numerical values.
+* `footprint` combined car length and width.
 
 ### Grouped descriptive analysis
 
-`groupby()`, `agg()`, `query()` and `sort_values()` were used to compare manufacturers by:
-
-* Number of cars
-* Mean and median price
-* Minimum and maximum price
-* Average engine size
-* Average horsepower
-* Average curb weight
-* Average city fuel efficiency
-
-Grouping allowed individual observations to be summarised at manufacturer level.
+`groupby()`, `agg()`, `query()` and `sort_values()` were used to compare manufacturers by price, engine size, horsepower, weight and fuel efficiency.
 
 ### Correlation analysis
 
-Pearson correlation was used to investigate linear relationships between numerical features. This helped identify:
-
-* Features strongly associated with price
-* Highly correlated vehicle-size characteristics
-* Potential redundancy between numerical predictors
-
-Correlation does not establish causation, detect all non-linear relationships or determine which variables are independently useful in a multiple regression model.
+Pearson correlation was used to identify linear relationships with price and groups of correlated numerical features. Correlation does not establish causation or determine independent predictive value.
 
 ### Data visualisation
 
@@ -201,112 +147,91 @@ Matplotlib and Seaborn were used for:
 * Scatter plots
 * Correlation heatmaps
 
-The analysis progressed from understanding and cleaning the data, through feature engineering and exploratory questions, to consideration of future predictive modelling.
-
 ### Alternative approaches
 
-The current notebook stops before implementing a full machine-learning model. Future approaches could include:
+Potential future approaches include:
 
 * Multiple linear regression
-* Feature selection based on model performance
-* Variance Inflation Factor (VIF) analysis
+* VIF analysis
 * Ridge and Lasso regression
-* Principal Component Analysis for selected numerical features
-* Methods suitable for mixed numerical and categorical data
-* Non-linear models
+* PCA for selected numerical features
+* Mixed-data modelling approaches
+* Non-linear machine-learning models
 
 ## Use of Generative AI
 
-Generative AI, including ChatGPT, was used as an ideation and learning aid. It supported:
+ChatGPT was used as an ideation and learning aid for:
 
-* Understanding automotive variables
-* Grouping variables conceptually
-* Generating exploratory questions
-* Developing feature-engineering ideas
-* Explaining Pandas operations and analytical concepts
-* Suggesting alternative analytical and modelling approaches
+* Automotive variable interpretation
+* Exploratory-question development
+* Feature-engineering ideas
+* Pandas and analytical concepts
+* Future modelling approaches
 
-AI suggestions were reviewed and adapted to the actual dataset. Final analysis decisions and interpretations were based on the notebook's code and results.
+AI suggestions were reviewed and adapted to the actual dataset and analysis results.
 
 ## Unfixed Bugs
 
-No known software bugs prevented the implemented analyses from running.
+No known software bugs prevent the implemented analysis from running.
 
-However, the project has several **limitations and unfinished areas**:
+Project limitations include:
 
-* The dataset contains only 205 observations, limiting generalisability.
-* Some manufacturers have small sample sizes, making their averages less reliable.
-* Manual spelling correction may not identify every inconsistency in larger datasets.
-* `footprint` is a simplified measure of vehicle size.
-* Correlation does not establish independent predictive effects.
-* Multicollinearity was identified as a potential issue but not formally tested using VIF.
-* Multiple linear regression was proposed but not implemented.
-* The dataset does not contain enough contextual information to establish how representative it is of the wider American car market.
+* Only 205 observations
+* Small manufacturer groups
+* Partly manual spelling correction
+* Simplified `footprint` measure
+* Correlation cannot establish independent effects
+* VIF was not formally calculated
+* Predictive modelling was not implemented
+* Limited context about how representative the dataset is of the wider American car market
 
-A key knowledge gap was **automotive business and engineering domain knowledge**. This was addressed by researching variable meanings and distinguishing broad engineering characteristics from highly specific vehicle features. Further domain research would be required before making strong real-world automotive claims.
+A further limitation was limited automotive domain knowledge. Variable meanings were researched, but stronger real-world conclusions would require additional domain expertise.
 
 ## Development Roadmap
 
-Future development could include:
-
 1. **Complete additional data validation**
 
-   * Standardise remaining text formatting.
-   * Check category frequencies and small groups.
-   * Investigate extreme observations.
+   * Standardise text and investigate small groups and extreme observations.
 
 2. **Develop a predictive baseline**
 
-   * Create a train/test split.
-   * Use the training-set mean price as a simple baseline.
+   * Use a train/test split and training-set mean price.
 
 3. **Build multiple linear regression models**
 
-   * Start with a small set of engineering features.
-   * Add vehicle-size characteristics.
-   * Encode categorical variables appropriately.
+   * Add engineering, size and categorical features incrementally.
    * Compare models with and without manufacturer.
 
 4. **Evaluate multicollinearity**
 
-   * Calculate VIF values.
-   * Compare models containing correlated features with reduced feature sets.
+   * Calculate VIF and compare reduced feature sets.
    * Investigate PCA for selected numerical groups.
 
-5. **Compare feature-engineering approaches**
+5. **Compare feature engineering**
 
    * Test `footprint` against its component variables.
-   * Explore interpretable features such as power-to-weight ratio.
-   * Compare features using out-of-sample performance.
+   * Investigate features such as power-to-weight ratio.
 
 6. **Evaluate predictive performance**
 
    * Use MAE, RMSE and R².
-   * Compare training and test performance.
-   * Inspect residuals and regression assumptions.
+   * Examine residuals and regression assumptions.
 
 7. **Develop domain knowledge**
 
-   * Research automotive engineering variables and market significance.
-   * Investigate how pricing analysts distinguish engineering cost, performance, brand positioning and consumer demand.
+   * Research automotive engineering, pricing, performance, brand positioning and consumer demand.
 
-The main challenge was moving from numerous technical automotive variables to a coherent framework suitable for both technical and business audiences. This was addressed by grouping variables conceptually, researching their meanings and beginning with exploratory analysis rather than immediately applying a predictive model.
-
-Future learning priorities include regression diagnostics, feature selection, multicollinearity and methods for mixed numerical and categorical data.
+The main challenge was translating many technical automotive variables into an analytical framework suitable for both technical and business audiences.
 
 ## Main Data Analysis Libraries
 
 ### Pandas
 
-Pandas was used for data loading, cleaning, transformation and grouped analysis.
-
-Examples:
+Used for data loading, cleaning, transformation and grouped analysis.
 
 ```python
 df.info()
-
 df.isnull().sum()
-
 df.duplicated().sum()
 ```
 
@@ -316,7 +241,7 @@ Feature extraction:
 df['manufacturer'] = df['CarName'].str.split().str[0]
 ```
 
-Grouped descriptive analysis:
+Grouped analysis:
 
 ```python
 manufacturer_price = (
@@ -326,79 +251,38 @@ manufacturer_price = (
 )
 ```
 
-Filtering grouped results:
-
-```python
-manufacturer_price.query('count >= 3')
-```
-
 ### NumPy
 
-NumPy was imported for numerical operations and is available for future feature engineering and modelling extensions.
+Used for numerical operations and available for future feature engineering and modelling.
 
 ### Matplotlib
 
-Matplotlib was used to customise visualisations, including figure size, axis labels, titles and tick rotation.
-
-Example:
-
-```python
-plt.figure(figsize=(12, 6))
-
-plt.xticks(rotation=45)
-
-plt.xlabel('Manufacturer')
-
-plt.ylabel('Average Price')
-
-plt.show()
-```
+Used to customise charts, including figure size, labels, titles and tick rotation.
 
 ### Seaborn
 
-Seaborn was used for higher-level statistical visualisations including bar plots, scatter plots and correlation heatmaps.
-
-Example:
-
-```python
-sns.barplot(
-    data=manufacturer_plot,
-    x=manufacturer_plot.index,
-    y='mean'
-)
-```
-
-and:
-
-```python
-sns.heatmap(
-    df[size_features].corr(),
-    annot=True,
-    cmap='coolwarm',
-    fmt='.2f'
-)
-```
+Used for statistical visualisations including bar plots, scatter plots and correlation heatmaps.
 
 ## Credits
 
 ### Content
 
-* The dataset was obtained from the [Car Price Prediction dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction/data).
-* The initial project structure was adapted from the Code Institute README template.
-* ChatGPT supported ideation, automotive-variable interpretation, exploratory-analysis planning, Pandas guidance and code discussion.
-* AI assistance was reviewed and adapted to the dataset and project requirements.
-* Pandas, Matplotlib and Seaborn documentation should be referenced for implementation details or code patterns directly adapted from their documentation.
+* Dataset obtained from the [Car Price Prediction dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction/data).
+* Project structure adapted from the Code Institute README template.
+* ChatGPT supported ideation, automotive-variable interpretation, exploratory planning, Pandas guidance and code discussion.
+* AI-generated suggestions were reviewed and adapted to the project.
+* Official Pandas, Matplotlib and Seaborn documentation should be referenced for directly adapted implementation details.
 
 ### Media
 
-No external photographs or media assets were used in the notebook analysis.
+No external photographs or media were used.
 
-The Code Institute logo in the README is provided through the Code Institute image resource included in the template.
+The Code Institute logo is provided through the resource included in the project template.
 
 ## Acknowledgements
 
-Thanks to Code Institute for the project template and learning framework that guided the project structure.
+Thanks to Code Institute for the project template and learning framework.
 
-Thanks to the Kaggle dataset contributor for making the car-price dataset publicly available for analysis and learning.
+Thanks to the Kaggle dataset contributor for making the dataset available.
 
-Thanks to ChatGPT for assistance with ideation, data-analysis concepts, automotive feature interpretation and code explanations during development.
+Thanks to ChatGPT for assistance with ideation, data-analysis concepts, automotive feature interpretation and code explanations.
