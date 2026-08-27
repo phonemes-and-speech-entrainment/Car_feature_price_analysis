@@ -172,7 +172,7 @@ AI suggestions were reviewed and adapted to the actual dataset and analysis resu
 
 ## Unfixed Bugs
 
-No known software bugs prevent the implemented analysis from running.
+VS Code .venv issues are discussed in detail inside the notebook, in an accessible manner.
 
 Project limitations include:
 
