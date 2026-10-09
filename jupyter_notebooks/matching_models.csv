@@ -1,0 +1,42 @@
+car_name_1,car_name_2,similarity
+audi 100 ls,audi 100ls,95.24
+saab 99le,saab 99gle,94.74
+saab 99e,saab 99le,94.12
+mazda glc custom l,mazda glc custom,94.12
+toyota corolla liftback,toyota corona liftback,93.33
+dodge coronet custom,dodge coronet custom (sw),93.02
+mitsubishi mirage,mitsubishi mirage g4,91.89
+peugeot 504,peugeot 304,90.91
+mazda glc,mazda glc 4,90.0
+jaguar xf,jaguar xk,88.89
+toyota corona,toyota corolla,88.89
+subaru r1,subaru r2,88.89
+saab 99e,saab 99gle,88.89
+audi 5000,audi 4000,88.89
+volvo 245,volvo 246,88.89
+jaguar xj,jaguar xk,88.89
+jaguar xj,jaguar xf,88.89
+honda accord lx,honda accord,88.89
+peugeot 504,peugeot 504 (sw),88.0
+toyota corolla 1200,toyota corolla 1600 (sw),87.8
+mitsubishi lancer,mitsubishi outlander,86.49
+honda civic 1500 gl,honda civic 1300,85.71
+toyota corolla 1200,toyota corolla,84.85
+buick skyhawk,buick skylark,84.62
+toyota corona,toyota carina,84.62
+subaru brz,subaru r1,84.21
+subaru brz,subaru r2,84.21
+mazda rx3,mazda rx-4,84.21
+bmw x1,bmw x3,83.33
+bmw x3,bmw x5,83.33
+bmw x1,bmw x5,83.33
+bmw x1,bmw x4,83.33
+peugeot 304,peugeot 604sl,83.33
+peugeot 504,peugeot 604sl,83.33
+bmw x4,bmw x5,83.33
+nissan titan,nissan teana,83.33
+bmw x3,bmw x4,83.33
+bmw z4,bmw x4,83.33
+volkswagen rabbit,volkswagen rabbit custom,82.93
+honda accord cvcc,honda accord,82.76
+mitsubishi lancer,mitsubishi pajero,82.35
