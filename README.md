@@ -156,5 +156,3 @@ This project is a testament to a collaborative, human-in-the-loop workflow that 
 *   The **user's "Car Market Expert Gem"** provided the specialised, industry-specific data needed for high-quality model curation.
 *   The **Code Institute's** educational materials provided the overall project framework and best practices.
 *   The user collaborated with  **code and data science AI assistants (Gemini Notebook, Deepseek, Chat GPT 6)** to translate the combined human and AI-driven requirements into robust, efficient code and to provide the technical and theoretical explanations for the analytical techniques employed.
-
-Last but not least, thanks to Phil for providing his unique expert insight into spotting car spelling mistakes.
