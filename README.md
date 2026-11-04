@@ -2,7 +2,17 @@
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome to the Car Price Prediction Project repository. This project contains a comprehensive data preparation, exploratory analysis, and predictive modelling pipeline for an automotive dataset, structured across two Jupyter Notebooks.
+Welcome to the Car Price Prediction Project repository. This project contains a comprehensive data preparation, exploratory analysis, and predictive modelling pipeline for an automotive dataset, structured across three Jupyter Notebooks.
+
+## Project Structure
+
+The main project workflow is in [Unit 2](jupyter_notebooks/Unit%202/):
+
+1. [Data understanding and ETL](jupyter_notebooks/Unit%202/Car_Price_Data_Understanding_ETL.ipynb)
+2. [Exploratory data analysis](jupyter_notebooks/Unit%202/Car_Price_EDA_and_Stats.ipynb)
+3. [Price prediction and modelling](jupyter_notebooks/Unit%202/car_price_prediction_ML.ipynb)
+
+Supporting datasets and dashboard files are also stored in the Unit 2 folder.
 
 ## Dataset Content
 
